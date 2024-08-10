@@ -16,7 +16,7 @@ const AddNewItem = () => {
         price: Yup.number().required('Required').positive('Must be positive')
       })}
       onSubmit={(values, { setSubmitting }) => {
-        axios.post('http://localhost:5000/items', values)
+        axios.post('https://data-z5eq.onrender.com/items', values)
           .then(response => {
             alert('Item added successfully');
             setSubmitting(false);
