@@ -11,7 +11,7 @@ const UpdateItem = () => {
   const [item, setItem] = useState(null);
   const navigate = useNavigate();
   useEffect(() => {
-    axios.get(`http://localhost:5000/items/${id}`)
+    axios.get(`https://data-z5eq.onrender.com/items/${id}`)
       .then(response => setItem(response.data))
       .catch(error => console.error(error));
   }, [id]);
@@ -24,7 +24,7 @@ const UpdateItem = () => {
         price: Yup.number().required('Required').positive('Must be positive')
       })}
       onSubmit={(values, { setSubmitting }) => {
-        axios.put(`http://localhost:5000/items/${id}`, values)
+        axios.put(`https://data-z5eq.onrender.com/items/${id}`, values)
           .then(response => {
             alert('Item updated successfully');
             setSubmitting(false);
