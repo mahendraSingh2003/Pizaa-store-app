@@ -10,13 +10,13 @@ const DisplayAllItems = () => {
   }, []);
 
   const  fetchitems=()=>{
-    axios.get('http://localhost:5000/items')
+    axios.get('https://data-z5eq.onrender.com/items')
     .then(response => setItems(response.data))
     .catch(error => console.error(error));
   }
 
   const handleDelete=(id)=>{
-    axios.delete(`http://localhost:5000/items/${id}`)
+    axios.delete(`https://data-z5eq.onrender.com/items/${id}`)
     .then(Response=>{
       fetchitems();
     })
